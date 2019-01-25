@@ -19,7 +19,16 @@ function rangeTranslator(range) {
       for (var j = 1; j < rangeString.length;) {
         if (comma.includes(rangeString[i + j])) {
           alert([i + j])
-          console.log(rangeString);
+          for (var k = 1; k < rangeString.length;) {
+            if (comma.includes(rangeString[i - k])) {
+              alert([i - k])
+              console.log([i + j])
+              console.log([i - k])
+              return
+            } else {
+              k++
+            }
+          }
           return
         } else {
           j++
@@ -48,5 +57,6 @@ $(document).ready(function(event) {
     var numberInput = parseInt($("#numberInput").val());
     numberRange(numberInput);
 
+    // $(".result").text(rangeTranslator());
   });
 });
