@@ -16,12 +16,18 @@ function rangeTranslator(range) {
   for (var i = 0; i < rangeString.length;) {
     if (modifierNumbers.includes(rangeString[i])) {
       alert([i])
-      if (comma.includes(rangeString[i + 1])) {
-        alert("found comma")
-        if (comma.includes(rangeString[i - 1])) {
-          alert("found second comma")
-          rangeString = rangeString.replace(rangeString[i], "sorry");
+      for (var j = 1; j < rangeString.length;) {
+        if (comma.includes(rangeString[i + j])) {
+          alert([i + j])
+          console.log(rangeString);
+          return
+        } else {
+          j++
         }
+        // if (comma.includes(rangeString[i - 1])) {
+        //   alert("found second comma")
+        //   rangeString = rangeString.replace(rangeString[i], "sorry");
+        // }
       }
       i++
     } else {
