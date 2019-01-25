@@ -8,15 +8,18 @@ function numberRange(numberInput) {
 }
 
 function rangeTranslator(range) {
-  var modifierNumbers = [3,2,1]
-  for (var i = 0; i < range.length;) {
-    if (modifierNumbers[0] == (range[i])) {
-      alert("the index of the three is " + [i])
-      i++
-    } else {
-      i++
-    }
-  }
+  // var modifierNumbers = ["3"]
+  var rangeString = range.toString();
+  var translatedString = rangeString.replace(/3/g, "sorry");
+  console.log(translatedString)
+  // for (var i = 0; i < rangeString.length;) {
+  //   if (modifierNumbers.includes(rangeString[i])) {
+  //     alert("the index of the three is " + [i])
+  //     i++
+  //   } else {
+  //     i++
+  //   }
+  // }
 }
 
 
