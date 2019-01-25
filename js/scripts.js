@@ -15,15 +15,20 @@ function rangeTranslator(range) {
   var rangeString = range.toString();
   for (var i = 0; i < rangeString.length;) {
     if (modifierNumbers.includes(rangeString[i])) {
-      alert([i])
+      alert([i]);
       for (var j = 1; j < rangeString.length;) {
         if (comma.includes(rangeString[i + j])) {
-          alert([i + j])
+          alert([i + j]);
+          endSlice = rangeString.slice((i + j), -1);
+          console.log(endSlice);
           for (var k = 1; k < rangeString.length;) {
             if (comma.includes(rangeString[i - k])) {
-              alert([i - k])
-              console.log([i + j])
-              console.log([i - k])
+              alert([i - k]);
+              frontSlice = rangeString.slice(0, (i - k) + 1);
+              console.log(rangeString);
+              console.log(frontSlice);
+              rangeString = (frontSlice + "sorry" + endSlice);
+              console.log(rangeString);
               return
             } else {
               k++
@@ -33,10 +38,6 @@ function rangeTranslator(range) {
         } else {
           j++
         }
-        // if (comma.includes(rangeString[i - 1])) {
-        //   alert("found second comma")
-        //   rangeString = rangeString.replace(rangeString[i], "sorry");
-        // }
       }
       i++
     } else {
