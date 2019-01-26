@@ -13,7 +13,7 @@ function rangeTranslator(range, rangeTranslated) {
   var comma = [","]
   var modifierNumbers = ["3"]
   var rangeString = range.toString();
-  var result = rangeTranslated
+  var result = (rangeTranslated + ",2,1,0")
   for (var i = 0; i < rangeString.length;) {
     if (modifierNumbers.includes(rangeString[i])) {
       for (var j = 0; j < rangeString.length;) {
@@ -24,10 +24,9 @@ function rangeTranslator(range, rangeTranslated) {
               frontSlice = rangeString.slice(0, (i - k) + 1);
               rangeTranslated = (rangeTranslated + frontSlice + "sorry")
               rangeString = endSlice;
-              console.log(rangeTranslated)
-              console.log(rangeString)
+              console.log(rangeTranslated + "hi")
+              console.log(rangeString + "hey")
               rangeTranslator(rangeString, rangeTranslated);
-              alert("hello")
             } else {
               k++
             }
@@ -41,15 +40,20 @@ function rangeTranslator(range, rangeTranslated) {
       i++
     }
   }
-  console.log(rangeString);
+  printResults(result);
+
+}
+
+function printResults(result) {
+  alert(result)
 }
 
 
 
 
 
-
 $(document).ready(function(event) {
+  $(".container").slideToggle("slow");
   $("form#beepBoopForm").submit(function(event) {
     event.preventDefault();
     var numberInput = parseInt($("#numberInput").val());
