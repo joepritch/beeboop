@@ -1,9 +1,14 @@
+body  {
+  background-color: black;
+  color: white;
+}
 .container  {
   display: none;
   text-align: center;
 }
 input {
   width: 50px;
+  color: black;
 }
 .btn:active  {
   border: 2px solid gray;
