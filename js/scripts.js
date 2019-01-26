@@ -7,24 +7,42 @@ function numberConvertor(numberInput) {
 }
 
 function threeFinder(range) {
+  alert("at three finder")
   var source = "3";
-  for (var i = 0; i < range.length;) {
+  for (var i = 0; i <= range.length;) {
     if (source.includes(range[i])) {
       rangeSlicer(range, i, source)
       return
-    } else {
+    } else if (i < range.length) {
       i++
+    } else if (i = range.length) {
+      console.log(range)
+      twoFinder(range)
+      return
     }
   }
 }
 
-function twofinder(range) {
+function twoFinder(range) {
+  alert("made it to two finder");
   var source = "2";
-
+  for (var i = 0; i <= range.length;) {
+    if (source.includes(range[i])) {
+      rangeSlicer(range, i, source);
+      return;
+    } else if (i < range.length) {
+      i++
+    } else if (i = range.length) {
+      console.log(range);
+      oneFinder(range);
+      return;
+    }
+  }
 }
 
-function onefinder(range) {
+function oneFinder(range) {
   var source = "1";
+  alert("made it to one finder");
 
 }
 
@@ -47,11 +65,15 @@ function  rangeSlicer(range, index, source) {
         if (source == 3) {
           returnRange = (message3 + endSlice)
           alert(returnRange);
+          alert("sending back to three finder");
           threeFinder(returnRange);
           return;
         } else if (source == 2) {
           returnRange = (message2 + endSlice)
           alert(returnRange);
+          alert("sending to three finder");
+          threeFinder(returnRange);
+          return;
         } else if (source == 1) {
           returnRange = (message1 + endSlice)
           alert(returnRange);
