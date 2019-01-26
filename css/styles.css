@@ -16,27 +16,27 @@ input {
   color: rgba(0,0,0,0);
 }
 .btn  {
-  border: 2px solid darkgrey;
+  border: 2px groove darkgrey;
   border-radius: 100%;
   background-image: radial-gradient(orange, red, darkred, black, black);
   color: rgba(0,0,0,0);
   margin: 0px;
 }
 .well {
-  border: 2px solid darkgrey;
+  border: 2px groove darkgrey;
   text-align: center;
   width: 50px;
   height: 125px;
   padding: 0px;
   padding-top: 0px;
-  background-color: black;
+  background-image: linear-gradient(rgb(50, 50, 50), rgb(0, 0, 0));
 }
 .greyBottom {
   margin-top: 5px;
   padding: 50%;
   padding-bottom: 5px;
-  background-color: grey;
-  border-top: 2px solid darkgrey;
+  background-image: linear-gradient(grey, darkgrey);
+  border-top: 2px groove darkgrey;
 }
 .halText  {
   float: left;
