@@ -41,9 +41,20 @@ function twoFinder(range) {
 }
 
 function oneFinder(range) {
-  var source = "1";
   alert("made it to one finder");
-
+  var source = "1";
+  for (var i = 0; i <= range.length;) {
+    if (source.includes(range[i])) {
+      rangeSlicer(range, i, source);
+      return;
+    } else if (i < range.length) {
+      i++
+    } else if (i = range.length) {
+      console.log(range);
+      alert(range);
+      return;
+    }
+  }
 }
 
 function  rangeSlicer(range, index, source) {
