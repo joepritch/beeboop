@@ -1,11 +1,55 @@
-function numberRange(numberInput) {
+function numberConvertor(numberInput) {
   var range = [];
   for (var i = numberInput; i >= 0; i--) {
     range.push(i);
   }
-  console.log(range)
-  rangeTranslator(range, "")
+  threeFinder(range.toString());
 }
+
+function threeFinder(range) {
+  console.log(range);
+  var source = "3";
+  for (var i = 0; i < range.length;) {
+    if (source.includes(range[i])) {
+      rangeSlicer(range, [i], source)
+      return
+    } else {
+      i++
+    }
+  }
+}
+
+function twofinder(range) {
+  var source = "2";
+
+}
+
+function onefinder(range) {
+  var source = "1";
+
+}
+
+function  rangeSlicer(range, index, source) {
+  alert("we made it")
+  var frontSlice = ""
+  var endSlice = ""
+  var returnRange = ""
+  var message1 = "Beep!"
+  var message2 = "Boop!"
+  var message3 = "Sorry!"
+  var comma = ","
+  if (index == "0") {
+    for (var i = index; i < range.length; i++) {
+      if (comma.includes(range[index + i])) {
+
+      }
+    }
+  }
+}
+
+
+
+
 
 function rangeTranslator(range, rangeTranslated) {
   // var translatedString = rangeString.replace(/3/g, "sorry");
@@ -57,7 +101,7 @@ $(document).ready(function(event) {
   $("form#beepBoopForm").submit(function(event) {
     event.preventDefault();
     var numberInput = parseInt($("#numberInput").val());
-    numberRange(numberInput);
+    numberConvertor(numberInput);
 
     // $(".result").text(rangeTranslator());
   });
