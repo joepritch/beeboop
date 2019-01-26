@@ -24,6 +24,32 @@ input {
   width: 50px;
   height: 125px;
   padding: 0px;
-  padding-top: 70px;
+  padding-top: 0px;
   background-color: black;
+}
+.greyBottom {
+  margin-top: 5px;
+  padding: 50%;
+  padding-bottom: 5px;
+  background-color: grey;
+  border-top: 2px solid darkgrey;
+}
+.halText  {
+  float: left;
+  margin-top: 6px;
+  margin-left: 6px;
+  margin-bottom: 32px;
+  border: 1px solid darkgrey;
+  font-size: 7px;
+  color: white;
+  padding: 0px;
+}
+#hal  {
+  background-color: rgb(1, 113, 213);
+  padding: 1px;
+  padding-bottom: 2px;
+}
+p {
+  margin: 0px;
+  padding: 0px;
 }

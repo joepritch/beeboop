@@ -4,37 +4,34 @@ function numberRange(numberInput) {
     range.push(i);
   }
   console.log(range)
-  rangeTranslator(range)
+  rangeTranslator(range, "")
 }
 
-function rangeTranslator(range) {
+function rangeTranslator(range, rangeTranslated) {
   // var translatedString = rangeString.replace(/3/g, "sorry");
   // console.log(translatedString)
   var comma = [","]
   var modifierNumbers = ["3"]
   var rangeString = range.toString();
+  var result = rangeTranslated
   for (var i = 0; i < rangeString.length;) {
     if (modifierNumbers.includes(rangeString[i])) {
-      alert([i]);
-      for (var j = 1; j < rangeString.length;) {
+      for (var j = 0; j < rangeString.length;) {
         if (comma.includes(rangeString[i + j])) {
-          alert([i + j]);
-          endSlice = rangeString.slice((i + j), -1);
-          console.log(endSlice);
-          for (var k = 1; k < rangeString.length;) {
+          endSlice = rangeString.slice((i + j), rangeString.length);
+          for (var k = 0; k < rangeString.length;) {
             if (comma.includes(rangeString[i - k])) {
-              alert([i - k]);
               frontSlice = rangeString.slice(0, (i - k) + 1);
-              console.log(rangeString);
-              console.log(frontSlice);
-              rangeString = (frontSlice + "sorry" + endSlice);
-              console.log(rangeString);
-              return
+              rangeTranslated = (rangeTranslated + frontSlice + "sorry")
+              rangeString = endSlice;
+              console.log(rangeTranslated)
+              console.log(rangeString)
+              rangeTranslator(rangeString, rangeTranslated);
+              alert("hello")
             } else {
               k++
             }
           }
-          return
         } else {
           j++
         }
