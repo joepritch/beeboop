@@ -43,6 +43,7 @@ function twoFinder(range) {
 function oneFinder(range) {
   alert("made it to one finder");
   var source = "1";
+  alert(range)
   for (var i = 0; i <= range.length;) {
     if (source.includes(range[i])) {
       rangeSlicer(range, i, source);
@@ -52,13 +53,14 @@ function oneFinder(range) {
     } else if (i = range.length) {
       console.log(range);
       alert(range);
+      result(range);
       return;
     }
   }
 }
 
 function  rangeSlicer(range, index, source) {
-  alert("we made it")
+  alert("made it to slicer")
   console.log(range);
   console.log(index);
   console.log(source);
@@ -88,6 +90,9 @@ function  rangeSlicer(range, index, source) {
         } else if (source == 1) {
           returnRange = (message1 + endSlice)
           alert(returnRange);
+          alert("sending 1 to three finder")
+          threeFinder(returnRange);
+          return;
         }
       }
     }
@@ -103,7 +108,9 @@ function  rangeSlicer(range, index, source) {
   }
 }
 
-
+function result(range) {
+  $("#result").text(range);
+}
 
 
 // function rangeTranslator(range, rangeTranslated) {
@@ -158,6 +165,8 @@ $(document).ready(function(event) {
     var numberInput = parseInt($("#numberInput").val());
     numberConvertor(numberInput);
 
-    // $("#result").text(printResult());
+    var result = function result(range) {
+      $("#result").text(range);
+    }
   });
 });
