@@ -26,8 +26,11 @@ This code is not as dry as it could be. Likely the three separate number finder 
 
 ## Setup/Installation Requirements
 
+The easy way
 * _Click [Here](https://joepritch.github.io/beeboop)_
-or
+
+
+The advanced way
 * _Clone this Repo_
 * _Open 'index.html' with your browser_
 
