@@ -7,7 +7,6 @@ function numberConvertor(numberInput) {
 }
 
 function threeFinder(range) {
-  alert("at three finder")
   var source = "3";
   for (var i = 0; i <= range.length;) {
     if (source.includes(range[i])) {
@@ -16,7 +15,6 @@ function threeFinder(range) {
     } else if (i < range.length) {
       i++
     } else if (i = range.length) {
-      console.log(range)
       twoFinder(range)
       return
     }
@@ -24,7 +22,6 @@ function threeFinder(range) {
 }
 
 function twoFinder(range) {
-  alert("made it to two finder");
   var source = "2";
   for (var i = 0; i <= range.length;) {
     if (source.includes(range[i])) {
@@ -33,7 +30,6 @@ function twoFinder(range) {
     } else if (i < range.length) {
       i++
     } else if (i = range.length) {
-      console.log(range);
       oneFinder(range);
       return;
     }
@@ -41,9 +37,7 @@ function twoFinder(range) {
 }
 
 function oneFinder(range) {
-  alert("made it to one finder");
   var source = "1";
-  alert(range)
   for (var i = 0; i <= range.length;) {
     if (source.includes(range[i])) {
       rangeSlicer(range, i, source);
@@ -51,8 +45,6 @@ function oneFinder(range) {
     } else if (i < range.length) {
       i++
     } else if (i = range.length) {
-      console.log(range);
-      alert(range);
       result(range);
       return;
     }
@@ -60,37 +52,27 @@ function oneFinder(range) {
 }
 
 function  rangeSlicer(range, index, source) {
-  alert("made it to slicer")
-  console.log(range);
-  console.log(index);
-  console.log(source);
   var frontSlice = ""
   var endSlice = ""
   var returnRange = ""
-  var message1 = "Beep!"
-  var message2 = "Boop!"
-  var message3 = "Sorry!"
+  var message1 = " Beep!"
+  var message2 = " Boop!"
+  var message3 = " Sorry!"
   var comma = ","
   if (index == 0) {
     for (var i = 0; i < range.length; i++) {
       if (comma.includes(range[index + i])) {
-        endSlice = range.slice((index + i), range.length)
+        endSlice = range.slice((index + i), range.length);
         if (source == 3) {
-          returnRange = (message3 + endSlice)
-          alert(returnRange);
-          alert("sending back to three finder");
+          returnRange = (message3 + endSlice);
           threeFinder(returnRange);
           return;
         } else if (source == 2) {
-          returnRange = (message2 + endSlice)
-          alert(returnRange);
-          alert("sending to three finder");
+          returnRange = (message2 + endSlice);
           threeFinder(returnRange);
           return;
         } else if (source == 1) {
-          returnRange = (message1 + endSlice)
-          alert(returnRange);
-          alert("sending 1 to three finder")
+          returnRange = (message1 + endSlice);
           threeFinder(returnRange);
           return;
         }
@@ -99,9 +81,24 @@ function  rangeSlicer(range, index, source) {
   } else {
     for (var i = 0; i < range.length; i++) {
       if (comma.includes(range[index + i])) {
-        endSlice = range.slice((index + i), range.length)
+        endSlice = range.slice((index + i), range.length);
         for (var j = 0; j < range.length; j++) {
-
+          if (comma.includes(range[index - j])) {
+            frontSlice = range.slice(0, (index - j) + 1);
+            if (source == 3) {
+              returnRange = (frontSlice + message3 + endSlice);
+              threeFinder(returnRange);
+              return;
+            } else if (source == 2) {
+              returnRange = (frontSlice + message2 + endSlice);
+              threeFinder(returnRange);
+              return;
+            } else if (source = 1) {
+              returnRange = (frontSlice + message1 + endSlice);
+              threeFinder(returnRange);
+              return;
+            }
+          }
         }
       }
     }
