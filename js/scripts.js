@@ -3,7 +3,24 @@ function numberConvertor(numberInput) {
   for (var i = numberInput; i >= 0; i--) {
     range.push(i);
   }
-  threeFinder(range.toString());
+  spaceAdder(range.toString());
+}
+
+function spaceAdder(range)  {
+  var comma = ",";
+  var space = " ";
+  var frontSlice = "";
+  var endSlice = "";
+  for (var i = 0; i < range.length; i++) {
+    if (comma.includes(range[i])) {
+      if (!space.includes(range[i + 1])) {
+        frontSlice = range.slice(0, (i + 1));
+        endSlice = range.slice((i + 1), range.length);
+        range = (frontSlice + space + endSlice);
+      }
+    }
+  }
+  threeFinder(range)
 }
 
 function threeFinder(range) {
