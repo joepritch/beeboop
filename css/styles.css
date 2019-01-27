@@ -10,10 +10,8 @@ input {
   width: 50px;
   color: black;
 }
-.btn:active  {
-  border: 2px solid gray;
-  background-image: radial-gradient( darkred, black, black);
-  color: rgba(0,0,0,0);
+.btn:default  {
+  color: rgba(0, 0, 0, 0);
 }
 .btn:hover  {
   border: 2px groove gray;
@@ -61,4 +59,7 @@ input {
 p {
   margin: 0px;
   padding: 0px;
+}
+h2  {
+  display: none;
 }

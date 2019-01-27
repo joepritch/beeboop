@@ -1,3 +1,4 @@
+// Business Logic
 function numberConvertor(numberInput) {
   var range = [];
   for (var i = numberInput; i >= 0; i--) {
@@ -74,7 +75,7 @@ function  rangeSlicer(range, index, source) {
   var returnRange = ""
   var message1 = " Beep!"
   var message2 = " Boop!"
-  var message3 = " Sorry!"
+  var message3 = " I'm sorry, Dave. I'm afraid I can't do that."
   var comma = ","
   if (index == 0) {
     for (var i = 0; i < range.length; i++) {
@@ -126,58 +127,15 @@ function result(range) {
   $("#result").text(range);
 }
 
-
-// function rangeTranslator(range, rangeTranslated) {
-//   // var translatedString = rangeString.replace(/3/g, "sorry");
-//   // console.log(translatedString)
-//   var comma = [","]
-//   var modifierNumbers = ["3"]
-//   var rangeString = range.toString();
-//   var result = (rangeTranslated + ",2,1,0")
-//   for (var i = 0; i < rangeString.length;) {
-//     if (modifierNumbers.includes(rangeString[i])) {
-//       for (var j = 0; j < rangeString.length;) {
-//         if (comma.includes(rangeString[i + j])) {
-//           endSlice = rangeString.slice((i + j), rangeString.length);
-//           for (var k = 0; k < rangeString.length;) {
-//             if (comma.includes(rangeString[i - k])) {
-//               frontSlice = rangeString.slice(0, (i - k) + 1);
-//               rangeTranslated = (rangeTranslated + frontSlice + "sorry")
-//               rangeString = endSlice;
-//               console.log(rangeTranslated + "hi")
-//               console.log(rangeString + "hey")
-//               rangeTranslator(rangeString, rangeTranslated);
-//             } else {
-//               k++
-//             }
-//           }
-//         } else {
-//           j++
-//         }
-//       }
-//       i++
-//     } else {
-//       i++
-//     }
-//   }
-//   printResults(result);
-//
-// }
-//
-// function printResults(result) {
-//   alert(result)
-// }
-
-
-
-
-
+// User Interface Logic
 $(document).ready(function(event) {
-  $(".container").slideToggle("slow");
+  $(".container").slideToggle(1000);
   $("form#beepBoopForm").submit(function(event) {
     event.preventDefault();
     var numberInput = parseInt($("#numberInput").val());
     numberConvertor(numberInput);
+
+    $("h2").show();
 
     var result = function result(range) {
       $("#result").text(range);
